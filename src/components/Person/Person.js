@@ -1,18 +1,30 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 import './Person.css';
 
-class Person extends Component {
-    render() {
-        return (
+//class Person extends Component {
+const Person =props=> (
+    //render() {
+      //  return (
             <div className="person">
-                <h1>{this.props.name}</h1>
-                <p>Age: {this.props.age}</p>
-                <p>{this.props.children}</p>
+                <h1>
+                    <button onClick={props.remove}>x</button>
+                    {props.name}
+                </h1>
+                <p>
+                    Age:
+                    {props.age}
+                    <button onClick={props.onClick}>+</button>
+                    </p>
+                <p>{props.children}</p>
+                <p>
+                    <input type="text" value={props.name}
+                           onChange={props.onchange}/>
+                </p>
             </div>
-        );
-    }
-};
+     //   );
+   // }
+);
 //
 // class Human{
 //     // constructor(){
